@@ -1,3 +1,65 @@
-.text {
-    background-color: yellow;
+.movieDetailsSection {
+    padding-bottom: 60px;
+}
+
+.movieDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    margin-bottom: 40px;
+}
+
+/* .movieImg {
+} */
+
+.mainMovieInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.movieTitle {
+    font-size: 35px;
+}
+
+.movieSubtitleText {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.movieSubtitleSpan {
+    font-weight: 700;
+    font-style: normal;
+}
+
+.movieSubtitleOverview {
+    font-size: 23px;
+}
+
+.movieSubtitleGenre {
+    font-size: 21px;
+}
+
+.additMovieInfo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.additMovieTitle {
+    font-size: 30px;
+}
+
+.additMovieList {
+}
+
+.additMovieItem {
+}
+
+.additMovieLink {
+    font-size: 20px;
+    
 }

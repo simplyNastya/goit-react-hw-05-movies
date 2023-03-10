@@ -11,7 +11,6 @@ const Home = () => {
     const fetchMovies = async () => {
       try {
         const trendingMovies = await getTrendingMovies();
-        console.log(trendingMovies.data.results);
         setMovies(trendingMovies.data.results);
       } catch (error) {
         console.log(error.name);
