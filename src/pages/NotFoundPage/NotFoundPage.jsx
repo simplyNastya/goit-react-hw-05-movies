@@ -1,5 +1,5 @@
 // import PropTypes from 'prop-types';
-import styles from './notFound.module.css';
+import styles from './notFoundPage.module.css';
 
 const NotFound = () => {
   return <p className={styles.text}>NotFound</p>;

@@ -1,41 +1,17 @@
 .headerSection {
-    background-color: blue;
-
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 20px;
     
     color: #000;
-    border-bottom: 1px solid #ECECEC;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.372);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+            0px 4px 4px rgba(0, 0, 0, 0.06),
+            1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* .nav {
 } */
 
-.navList {
-    display: flex;
-    gap: 40px;
-
-    list-style: none;
-}
-
 /* .navItem {
 } */
-
-.navLink {
-    text-decoration: none;
-
-    font-weight: 700;
-    font-size: 20px;
-    line-height: calc(16 / 14);
-    letter-spacing: 0.02em;
-
-    color: #000;
-}
-
-.navLink:hover,
-.navLink:focus {
-    color: red;
-}
-
-/* 
-.navLinkCurrent {} */
