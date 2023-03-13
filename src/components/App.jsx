@@ -7,7 +7,7 @@ import UserRoutes from 'services/userRoutes';
 export const App = () => {
   return (
     <div className="container">
-      <BrowserRouter>
+      <BrowserRouter basename="/goit-react-hw-05-movies">
         <Navbar />
         <UserRoutes />
       </BrowserRouter>

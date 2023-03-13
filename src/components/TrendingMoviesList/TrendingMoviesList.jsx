@@ -1,11 +1,16 @@
 // import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './trendingMoviesList.module.css';
 
 const TrendingMoviesList = ({ movies }) => {
+  const location = useLocation();
   const elements = movies.map(({ id, poster_path, original_title }) => (
     <li key={id} className={styles.item}>
-      <Link to={`/movies/${id}`} className={styles.link}>
+      <Link
+        to={`/movies/${id}`}
+        state={{ from: location }}
+        className={styles.link}
+      >
         <img
           src={`https://image.tmdb.org/t/p/original${poster_path}`}
           alt={original_title}

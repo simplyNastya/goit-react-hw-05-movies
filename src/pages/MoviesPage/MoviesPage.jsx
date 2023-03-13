@@ -1,6 +1,6 @@
 // import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { searchMovies } from 'services/apiMovies';
 import styles from './moviesPage.module.css';
 
@@ -8,6 +8,7 @@ const Movies = () => {
   // const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
+  const location = useLocation();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -56,7 +57,11 @@ const Movies = () => {
           {movies &&
             movies.map(movie => (
               <li key={movie.id} className={styles.movieItem}>
-                <Link to={`/movies/${movie.id}`} className={styles.movieLink}>
+                <Link
+                  to={`/movies/${movie.id}`}
+                  state={{ from: location }}
+                  className={styles.movieLink}
+                >
                   {movie.title}
                 </Link>
               </li>

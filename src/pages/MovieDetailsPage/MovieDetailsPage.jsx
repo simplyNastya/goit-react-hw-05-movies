@@ -1,7 +1,12 @@
 // import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import {
+  useParams,
+  useNavigate,
+  Link,
+  Outlet,
+  useLocation,
+} from 'react-router-dom';
 import { getMovieDetails } from 'services/apiMovies';
 import styles from './movieDetailsPage.module.css';
 
@@ -11,6 +16,8 @@ const MovieDetails = () => {
 
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from || '/';
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -26,7 +33,7 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, [id]);
 
-  const goBack = () => navigate(-1);
+  const goBack = () => navigate(from);
 
   return (
     <main>
@@ -63,16 +70,25 @@ const MovieDetails = () => {
           <h2 className={styles.additMovieTitle}>Additional information</h2>
           <ul className={styles.additMovieList}>
             <li className={styles.additMovieItem}>
-              <Link to={`cast`} className={styles.additMovieLink}>
+              <Link
+                to="cast"
+                state={{ from }}
+                className={styles.additMovieLink}
+              >
                 Cast
               </Link>
             </li>
             <li className={styles.additMovieItem}>
-              <Link to={`reviews`} className={styles.additMovieLink}>
+              <Link
+                to="reviews"
+                state={{ from }}
+                className={styles.additMovieLink}
+              >
                 Reviews
               </Link>
             </li>
           </ul>
+          <Outlet />
         </div>
       </section>
     </main>
