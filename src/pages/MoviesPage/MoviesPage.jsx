@@ -11,14 +11,15 @@ const Movies = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
     setSearchParams({
       query: e.currentTarget.elements.movieTitle.value ?? '',
     });
-    e.currentTarget.reset();
+    // e.currentTarget.reset();
   };
 
-  const query = searchParams.get('query');
   useEffect(() => {
+    const query = searchParams.get('query');
     const fetchMovie = async () => {
       try {
         const { data } = await searchMovies(query);
