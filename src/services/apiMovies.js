@@ -20,3 +20,9 @@ export const getMovieCast = (id) => {
     `https://${BASE_API_URL}/movie/${id}/credits?api_key=${API_KEY}`
   );
 };
+
+export const getMovieReviews = id => {
+  return axios.get(
+    `https://${BASE_API_URL}/movie/${id}/reviews?api_key=${API_KEY}&page=1`
+  );
+};
