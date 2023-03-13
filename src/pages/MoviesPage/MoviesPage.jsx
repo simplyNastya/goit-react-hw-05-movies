@@ -1,11 +1,9 @@
-// import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { searchMovies } from 'services/apiMovies';
 import styles from './moviesPage.module.css';
 
 const Movies = () => {
-  // const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
   const location = useLocation();

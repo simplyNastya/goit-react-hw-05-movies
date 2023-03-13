@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './trendingMoviesList.module.css';
 
@@ -30,3 +30,13 @@ const TrendingMoviesList = ({ movies }) => {
 };
 
 export default TrendingMoviesList;
+
+TrendingMoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      poster_path: PropTypes.string.isRequired,
+      original_title: PropTypes.string.isRequired,
+    })
+  ),
+};

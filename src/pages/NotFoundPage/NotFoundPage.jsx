@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import styles from './notFoundPage.module.css';
 
 const NotFound = () => {

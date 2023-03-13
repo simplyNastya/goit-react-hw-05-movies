@@ -22,6 +22,6 @@ const UserRoutes = () => {
         </Routes>
         </Suspense>
     )
-}
+} 
 
 export default UserRoutes;
