@@ -1,6 +1,6 @@
 // import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { getMovieDetails } from 'services/apiMovies';
 import styles from './movieDetailsPage.module.css';
@@ -10,6 +10,7 @@ const MovieDetails = () => {
   const [genres, setGenres] = useState([]);
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -17,10 +18,6 @@ const MovieDetails = () => {
         const movieDetails = await getMovieDetails(id);
         setMovie(movieDetails.data);
         setGenres([...movieDetails.data.genres]);
-        // const genresArr = movie.genres.name;
-        // console.log(genresArr);
-        // const genres = genresArr.map(genre => console.log(genre));
-        console.log(movieDetails.data);
       } catch (error) {
         console.log(error.name);
         console.log(error.message);
@@ -29,9 +26,14 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, [id]);
 
+  const goBack = () => navigate(-1);
+
   return (
     <main>
       <section className={styles.movieDetailsSection}>
+        <button onClick={goBack} type="button" className={styles.goBackBtn}>
+          Go back
+        </button>
         <div className={styles.movieDetails}>
           {movie.poster_path && (
             <img
@@ -61,10 +63,14 @@ const MovieDetails = () => {
           <h2 className={styles.additMovieTitle}>Additional information</h2>
           <ul className={styles.additMovieList}>
             <li className={styles.additMovieItem}>
-              <Link className={styles.additMovieLink}>Cast</Link>
+              <Link to={`cast`} className={styles.additMovieLink}>
+                Cast
+              </Link>
             </li>
             <li className={styles.additMovieItem}>
-              <Link className={styles.additMovieLink}>Reviews</Link>
+              <Link to={`reviews`} className={styles.additMovieLink}>
+                Reviews
+              </Link>
             </li>
           </ul>
         </div>

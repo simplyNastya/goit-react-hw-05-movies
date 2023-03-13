@@ -1,9 +1,10 @@
 // import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import items from '../../../data/navbarMenuItems.json';
 import styles from './navbarMenuItems.module.css';
 
-const NavbarMenuItems = ({ menuItems }) => {
-  const elements = menuItems.map(({ id, text, link }) => {
+const NavbarMenuItems = () => {
+  const elements = items.map(({ id, text, link }) => {
     return (
       <li key={id} className={styles.navItem}>
         <NavLink to={link} className={styles.navLink}>

@@ -1,3 +1,57 @@
-.text {
-    background-color: orange;
+.moviesSearchSection {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.searchForm {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.searchInput{
+    width: 240px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    outline: none;
+}
+
+.searchBtn{
+    padding: 10px 15px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.searchBtn:hover, 
+.searchBtn:focus {
+    color: red;
+    border: 1px solid red;
+}
+
+.moviesList{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.movieItem{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.movieLink{
+    text-decoration: none;
+    color: #000;
+}
+
+.movieLink:hover,
+.movieLink:focus {
+    color: red;
 }

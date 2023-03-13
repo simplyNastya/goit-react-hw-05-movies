@@ -1,8 +1,48 @@
 // import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getMovieCast } from 'services/apiMovies';
 import styles from './cast.module.css';
 
 const Cast = () => {
-  return <p className={styles.text}>Cast</p>;
+  const [cast, setCast] = useState([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchMovieCast = async () => {
+      try {
+        const { data } = await getMovieCast(id);
+        setCast([...data.cast]);
+      } catch (error) {
+        console.log(error.name);
+        console.log(error.message);
+      }
+    };
+    fetchMovieCast();
+  }, [id]);
+
+  const elements = cast.map(actor => (
+    <li key={actor.id} className={styles.castItem}>
+      {actor.profile_path && (
+        <img
+          className={styles.castImg}
+          src={'https://image.tmdb.org/t/p/w500' + actor.profile_path}
+          alt={actor.name}
+          width="180"
+        />
+      )}
+      <p className={styles.castText}>{actor.name}</p>
+      <p className={styles.castText}>Character: {actor.character}</p>
+    </li>
+  ));
+
+  return (
+    <main>
+      <section className={styles.castSection}>
+        <ul className={styles.castList}>{elements}</ul>
+      </section>
+    </main>
+  );
 };
 
 export default Cast;

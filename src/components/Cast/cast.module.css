@@ -1,3 +1,33 @@
-.text {
-    background-color: blueviolet;
+.castSection{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+
+.castList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.castItem {
+    width: 180px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.castImg{
+    height: 100%;
+}
+
+.castText{
+    font-weight: 600;
+}
+

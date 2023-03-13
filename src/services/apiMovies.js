@@ -10,3 +10,13 @@ export const getTrendingMovies = () => {
 export const getMovieDetails = (movie_id) => {
     return axios.get(`https://${BASE_API_URL}/movie/${movie_id}?api_key=${API_KEY}`)
 }
+
+export const searchMovies = (searchValue) => {
+    return axios.get(`https://${BASE_API_URL}/search/movie?api_key=${API_KEY}&query=${searchValue}&page=1&include_adult=true`)
+}
+
+export const getMovieCast = (id) => {
+  return axios.get(
+    `https://${BASE_API_URL}/movie/${id}/credits?api_key=${API_KEY}`
+  );
+};
