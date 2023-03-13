@@ -15,7 +15,7 @@ const Movies = () => {
     setSearchParams({
       query: e.currentTarget.elements.movieTitle.value ?? '',
     });
-    // e.currentTarget.reset();
+    e.currentTarget.reset();
   };
 
   useEffect(() => {
