@@ -15,12 +15,9 @@ import styles from './swiper.module.css';
 const SwiperM = () => {
   const videos = useVideoArr();
 
-  //   .sort(
-  //     (firstItem, secondItem) =>
-  //       firstItem.published_at - secondItem.published_at
-  //   )
+  const videosNew = [...videos].reverse();
 
-  const slides = videos.map(video => (
+  const slides = videosNew.map(video => (
     <>
       <iframe
         key={video.id}
