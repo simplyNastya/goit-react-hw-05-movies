@@ -1,13 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectCube, Virtual } from 'swiper';
+import { Navigation, Pagination, Virtual } from 'swiper';
 
 import useVideoArr from 'services/useVideoArr';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-// import 'swiper/css/effectcube';
 import 'swiper/css/virtual';
 
 import styles from './swiper.module.css';
@@ -34,12 +32,12 @@ const SwiperM = () => {
   ));
   return (
     <Swiper
-      modules={[Navigation, Pagination, EffectCube, Virtual]}
+      modules={[Navigation, Pagination, Virtual]}
       spaceBetween={50}
       slidesPerView={2}
-      virtual
       navigation
       pagination={{ clickable: true }}
+      virtual
       onSlideChange={() => console.log('slide change')}
       onSwiper={swiper => console.log(swiper)}
       className={styles.swiper}
