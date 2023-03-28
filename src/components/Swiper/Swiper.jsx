@@ -12,8 +12,13 @@ import 'swiper/css/virtual';
 
 import styles from './swiper.module.css';
 
-export default () => {
+const SwiperM = () => {
   const videos = useVideoArr();
+
+  //   .sort(
+  //     (firstItem, secondItem) =>
+  //       firstItem.published_at - secondItem.published_at
+  //   )
 
   const slides = videos.map(video => (
     <>
@@ -32,7 +37,6 @@ export default () => {
   ));
   return (
     <Swiper
-      // install Swiper modules
       modules={[Navigation, Pagination, EffectCube, Virtual]}
       spaceBetween={50}
       slidesPerView={2}
@@ -51,3 +55,5 @@ export default () => {
     </Swiper>
   );
 };
+
+export default SwiperM;
