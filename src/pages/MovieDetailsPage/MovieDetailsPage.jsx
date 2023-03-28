@@ -86,6 +86,15 @@ const MovieDetails = () => {
                 Reviews
               </Link>
             </li>
+            <li className={styles.additMovieItem}>
+              <Link
+                to="trailer"
+                state={{ from }}
+                className={styles.additMovieLink}
+              >
+                Trailer
+              </Link>
+            </li>
           </ul>
           <Outlet />
         </div>

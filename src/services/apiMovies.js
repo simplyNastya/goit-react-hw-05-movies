@@ -26,3 +26,9 @@ export const getMovieReviews = (id) => {
     `https://${BASE_API_URL}/movie/${id}/reviews?api_key=${API_KEY}&page=1`
   );
 };
+
+export const getVideo = (id) => {
+  return axios.get(
+    `https://${BASE_API_URL}/movie/${id}/videos?api_key=${API_KEY}`
+  );
+};
