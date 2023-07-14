@@ -38,8 +38,8 @@ const SwiperM = () => {
       navigation
       pagination={{ clickable: true }}
       virtual
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={swiper => console.log(swiper)}
+      // onSlideChange={() => console.log('slide change')}
+      // onSwiper={swiper => console.log(swiper)}
       className={styles.swiper}
     >
       {slides.map((slideContent, index) => (
