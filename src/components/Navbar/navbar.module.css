@@ -10,6 +10,18 @@
             1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img {
+    width: 60px;
+    background-color: transparent;
+    margin-right: 16px;
+}
+
 /* .nav {
 } */
 

@@ -1,5 +1,9 @@
 .trendingMoviesSection {
     padding: 30px 0;
-    /* display: flex; */
+}
 
+.title {
+    font-size: 43px;
+    text-align: center;
+    margin-bottom: 50px;
 }

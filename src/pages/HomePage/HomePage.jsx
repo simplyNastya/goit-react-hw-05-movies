@@ -21,6 +21,7 @@ const Home = () => {
 
   return (
     <section className={styles.trendingMoviesSection}>
+      <h1 className={styles.title}>Trending today</h1>
       <TrendingMoviesList movies={movies} />
     </section>
   );

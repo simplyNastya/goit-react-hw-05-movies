@@ -23,7 +23,6 @@ const TrendingMoviesList = ({ movies }) => {
   ));
   return (
     <>
-      <h1 className={styles.title}>Trending today</h1>
       <ul className={styles.list}>{elements}</ul>
     </>
   );

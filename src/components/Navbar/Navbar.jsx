@@ -1,12 +1,18 @@
 // import PropTypes from 'prop-types';
 import NavbarMenuItems from './NavbarMenuItems/NavbarMenuItems';
 import styles from './navbar.module.css';
+import popcorn from '../../images/popcorn.png';
+// import { GiPopcorn } from 'react-icons/gi';
 
 const Navbar = () => {
   return (
     <header className={styles.headerSection}>
       <nav className={styles.nav}>
-        <NavbarMenuItems />
+        <div className={styles.wrapper}>
+          <NavbarMenuItems />
+          <img src={popcorn} alt="popcorn" className={styles.img} />
+          {/* <GiPopcorn /> */}
+        </div>
       </nav>
     </header>
   );
