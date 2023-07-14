@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { searchMovies } from 'services/apiMovies';
 import noImg from '../../images/noImage.jpg';
+import { BsSearch } from 'react-icons/bs';
 import styles from './moviesPage.module.css';
 
 const Movies = () => {
@@ -51,7 +52,11 @@ const Movies = () => {
               className={styles.searchInput}
             />
             <button type="submit" className={styles.searchBtn}>
-              Search
+              <BsSearch
+                styles={{
+                  width: '25',
+                }}
+              />
             </button>
           </form>
         </div>

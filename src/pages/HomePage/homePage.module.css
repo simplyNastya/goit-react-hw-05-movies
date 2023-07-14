@@ -2,8 +2,30 @@
     padding: 30px 0;
 }
 
+
 .title {
     font-size: 43px;
     text-align: center;
     margin-bottom: 50px;
+    background: linear-gradient(to right,
+                #070707 20%,
+                #ffadad 30%,
+                #ff6565 70%,
+                #ff0000 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textGradient 5s ease-in-out infinite alternate;
+}
+
+@keyframes textGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }

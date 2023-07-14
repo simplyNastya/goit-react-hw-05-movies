@@ -7,6 +7,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import { getMovieDetails } from 'services/apiMovies';
+import { GiFastBackwardButton } from 'react-icons/gi';
 import styles from './movieDetailsPage.module.css';
 
 const MovieDetails = () => {
@@ -38,7 +39,7 @@ const MovieDetails = () => {
     <main>
       <section className={styles.movieDetailsSection}>
         <button onClick={goBack} type="button" className={styles.goBackBtn}>
-          Go back
+          <GiFastBackwardButton className={styles.svgArrBack} />
         </button>
         <div className={styles.movieDetails}>
           {movie.poster_path && (

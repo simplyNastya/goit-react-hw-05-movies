@@ -35,8 +35,11 @@
 }
 
 .searchBtn{
-    padding: 10px 15px;
-    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 13px;
     background-color: transparent;
     border: 1px solid #000;
     border-radius: 5px;
