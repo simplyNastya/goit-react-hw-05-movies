@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
+import noImg from '../../images/noImage.jpg';
 import styles from './trendingMoviesList.module.css';
 
 const TrendingMoviesList = ({ movies }) => {
@@ -11,12 +12,21 @@ const TrendingMoviesList = ({ movies }) => {
         state={{ from: location }}
         className={styles.link}
       >
-        <img
-          src={`https://image.tmdb.org/t/p/original${poster_path}`}
-          alt={original_title}
-          width="355"
-          className={styles.img}
-        />
+        {poster_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/original${poster_path}`}
+            alt={original_title}
+            width="275"
+            className={styles.img}
+          />
+        ) : (
+          <img
+            src={noImg}
+            alt={original_title}
+            width="275"
+            className={styles.img}
+          />
+        )}
         <p className={styles.subtitle}>{original_title}</p>
       </Link>
     </li>

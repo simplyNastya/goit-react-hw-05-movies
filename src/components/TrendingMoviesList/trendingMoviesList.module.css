@@ -32,15 +32,15 @@
 
 .img{
     height: 100%;
+    object-fit: cover;
 }
 
 .subtitle{
-    margin-bottom: 4px;
+    margin-top: 10px;
 
     text-align: center;
 
     font-weight: 700;
     font-size: 18px;
-    line-height: calc(36 / 18);
     letter-spacing: 0.06em;
 }
