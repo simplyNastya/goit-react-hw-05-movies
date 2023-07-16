@@ -22,7 +22,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .searchInput{
@@ -40,7 +40,7 @@
     align-items: center;
 
     padding: 10px 13px;
-    background-color: transparent;
+    background-color: white;
     border: 1px solid #000;
     border-radius: 5px;
     cursor: pointer;
@@ -50,6 +50,13 @@
 .searchBtn:focus {
     color: red;
     border: 1px solid red;
+    animation: scale 1s 1 forwards;
+}
+
+@keyframes scale {
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .moviesList {
